@@ -2,12 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package PlatoPrincipal;
+package ProteinasCarni;
+
+import PlatoPrincipal.ProteinaCarnivora;
 
 /**
  *
  * @author USUARIO
  */
-public interface ProteinaCarnivora {
-    public String caracteristicas();
+public class Marisco implements ProteinaCarnivora{
+    public String caracteristicas (){
+        return "Mariscos bañados en salsa";
+    }
 }

@@ -4,10 +4,14 @@
  */
 package Guarniciones;
 
+import PlatoPrincipal.Guarnicion;
+
 /**
  *
  * @author USUARIO
  */
-public class Papa {
-    
+public class Papa implements Guarnicion{
+    public String caracteristicas (){
+        return "Papa cocinada";
+    }
 }

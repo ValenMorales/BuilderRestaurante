@@ -8,6 +8,6 @@ package PlatoPrincipal;
  *
  * @author USUARIO
  */
-public class ProteinaVegetariana {
-    
+public interface ProteinaVegetariana {
+    public String caracteristicas();
 }
