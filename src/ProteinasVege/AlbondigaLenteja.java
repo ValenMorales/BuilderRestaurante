@@ -2,16 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Guarniciones;
+package ProteinasVege;
 
-import PlatoPrincipal.Guarnicion;
+import PlatoPrincipal.ProteinaVegetariana;
 
 /**
  *
  * @author USUARIO
  */
-public class Papa implements Guarnicion{
+public class AlbondigaLenteja implements ProteinaVegetariana{
     public String caracteristicas (){
-        return "Papa cocinada";
+       return "Albondigas de lentejas";
+                
     }
 }

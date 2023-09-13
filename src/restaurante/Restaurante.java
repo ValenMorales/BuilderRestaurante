@@ -4,6 +4,8 @@
  */
 package restaurante;
 
+import Builders.*;
+
 /**
  *
  * @author USUARIO
@@ -14,7 +16,20 @@ public class Restaurante {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+   
     }
     
+     public void EnsamblarPlatoCarnivoro(BuilderCarnivoro construir)
+    {
+     construir.colocaItem1();
+     construir.colocaItem2();
+     construir.colocaProteina();
+    }
+     
+     public void EnsamblarPlatoVegetariano (BuilderVegetariano construir){
+         construir.colocaItem1();
+         construir.colocaItem2();
+         construir.colocaProteina();
+         
+     }
 }

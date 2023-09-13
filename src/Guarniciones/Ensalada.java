@@ -4,10 +4,14 @@
  */
 package Guarniciones;
 
+import PlatoPrincipal.Guarnicion;
+
 /**
  *
  * @author USUARIO
  */
-public class Ensalada {
-    
+public class Ensalada implements Guarnicion {
+    public String caracteristicas (){
+        return "ensalada dulce";
+    }
 }

@@ -5,6 +5,6 @@ package PlatoPrincipal;
  *
  * @author USUARIO
  */
-public class Guarnicion {
-    
+public interface Guarnicion {
+    public String caracteristicas();
 }

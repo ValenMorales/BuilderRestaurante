@@ -4,10 +4,14 @@
  */
 package Guarniciones;
 
+import PlatoPrincipal.Guarnicion;
+
 /**
  *
  * @author USUARIO
  */
-public class Arepa {
-    
+public class Arepa implements Guarnicion {
+    public String caracteristicas (){
+        return "Arepa frita";
+    }
 }
