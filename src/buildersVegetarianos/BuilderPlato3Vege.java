@@ -4,10 +4,29 @@
  */
 package buildersVegetarianos;
 
+import static Builders.BuilderCarnivoro.producto;
+import Builders.BuilderVegetariano;
+import Guarniciones.*;
+import ProteinasVege.*;
+
 /**
  *
  * @author USUARIO
  */
-public class BuilderPlato3Vege {
-    
+public class BuilderPlato3Vege implements BuilderVegetariano{
+     
+    @Override
+    public void colocaItem1() {
+        producto.colocarItem1(new Papa());
+    }
+
+    @Override
+    public void colocaItem2() {
+          producto.colocarItem2(new Ensalada());
+ }
+
+    @Override
+    public void colocaProteina() {
+        producto.colocarProteina(new SopaTomate());
+    }
 }

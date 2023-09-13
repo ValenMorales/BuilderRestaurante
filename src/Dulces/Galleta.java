@@ -2,18 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ProteinasCarni;
-
-import PlatoPrincipal.ProteinaCarnivora;
+package Dulces;
 
 /**
  *
  * @author USUARIO
  */
-public class Marisco implements ProteinaCarnivora{
-    public String caracteristicas (){
-        return "Mariscos bañados en salsa";
-    }
-
-  
+public class Galleta implements Dulce{
+     @Override
+    public String caracteristicas() {
+        return "Galleta de avena";
+   }
 }

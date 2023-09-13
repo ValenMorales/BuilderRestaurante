@@ -4,13 +4,13 @@
  */
 package ProteinasCarni;
 
-import PlatoPrincipal.ProteinaVegetariana;
-
+import PlatoPrincipal.ProteinaCarnivora;
 /**
  *
  * @author USUARIO
  */
-public class CarnePlancha implements ProteinaVegetariana{
+public class CarnePlancha implements ProteinaCarnivora{
+    @Override
     public String caracteristicas (){
         return "carne asada a la plancha";
     }

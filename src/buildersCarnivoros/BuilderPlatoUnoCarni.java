@@ -4,10 +4,35 @@
  */
 package buildersCarnivoros;
 
+import Builders.BuilderCarnivoro;
+import Guarniciones.Ensalada;
+import Guarniciones.Papa;
+import ProteinasCarni.CarnePlancha;
+
 /**
  *
  * @author USUARIO
  */
-public class BuilderPlatoUnoCarni {
-    
+public class BuilderPlatoUnoCarni implements BuilderCarnivoro {
+
+
+    @Override
+    public void colocaItem1() {
+        producto.colocarItem1(new Papa());
+    }
+
+    @Override
+    public void colocaItem2() {
+          producto.colocarItem2(new Ensalada());
+ }
+
+    @Override
+    public void colocaProteina() {
+        producto.colocarProteina(new CarnePlancha());
+    }
+        @Override
+    public double precio() {
+        return 30000;
+    }
+
 }

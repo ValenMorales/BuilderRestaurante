@@ -2,12 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package PlatoPrincipal;
+package Builders;
+
+import Productos.ProductoPostre;
 
 /**
  *
  * @author USUARIO
  */
-public interface ProteinaVegetariana {
-    public String caracteristicas();
+public interface BuilderPostre {
+    ProductoPostre producto=new ProductoPostre();
+    public void colocarItem1();
+    public void colocarItem2();
+    public void colocarItem3();
 }
