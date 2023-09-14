@@ -5,6 +5,9 @@
 package BuildersPostres;
 
 import Builders.BuilderPostre;
+import Dulces.Chispas;
+import Dulces.Galleta;
+import Dulces.Helado;
 
 /**
  *
@@ -14,17 +17,18 @@ public class BuilderPostreCuatro implements BuilderPostre {
 
     @Override
     public void colocarItem1() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        producto.colocarItem1(new Helado());
+  }
 
     @Override
     public void colocarItem2() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        producto.colocarItem2(new Galleta());
+     }
 
     @Override
     public void colocarItem3() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+  
+    producto.colocarItem3(new Chispas());
     }
     
 }
