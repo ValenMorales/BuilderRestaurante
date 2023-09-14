@@ -3,12 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
+import BuildersPostres.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import buildersCarnivoros.BuilderPlatoCuatroCarni;
+import buildersCarnivoros.BuilderPlatoTresCarni;
+import buildersCarnivoros.BuilderPlatoDosCarni;
+import buildersCarnivoros.BuilderPlatoUnoCarni;
+import buildersVegetarianos.BuilderPlato1Vege;
+import buildersVegetarianos.BuilderPlato2Vege;
+import buildersVegetarianos.BuilderPlato3Vege;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -19,12 +29,39 @@ public class View extends javax.swing.JFrame {
     /**
      * Creates new form View
      */
+    double PrecioFinal=0.0;
+
+    BuilderPlatoCuatroCarni platoCarni4;
+    BuilderPlatoTresCarni platoCarni3;
+    BuilderPlatoDosCarni platoCarni2;
+    BuilderPlatoUnoCarni platoCarni1;
+
+    BuilderPlato1Vege builderPlatoUnoVege;
+    BuilderPlato2Vege builderPlatoDosVege;
+    BuilderPlato3Vege builderPlatoTresVege;
+    
+    BuilderPostreUno builderPostreUno;
+    BuilderPostre2 builderPostreDos;
+    BuilderPostreTres builderPostreTres;
+    BuilderPostreCuatro builderPostreCuatro;
+
     public View() {
         initComponents();
+        setLocationRelativeTo(null);
         ngOnitEntries();
         ngOnitStrongPlate();
         ngOnitDrinks();
         ngOnitPostres();
+        platoCarni1 = new BuilderPlatoUnoCarni();
+        platoCarni2 = new BuilderPlatoDosCarni();
+        platoCarni3 = new BuilderPlatoTresCarni();
+        platoCarni4 = new BuilderPlatoCuatroCarni();
+        
+        builderPostreUno = new BuilderPostreUno();
+        builderPostreDos = new BuilderPostre2();
+        builderPostreTres = new BuilderPostreTres();
+        builderPostreCuatro = new BuilderPostreCuatro();
+        cargarPrecio();
     }
 
     /**
@@ -38,13 +75,13 @@ public class View extends javax.swing.JFrame {
 
         jDesktopPane8 = new javax.swing.JDesktopPane();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPaneEntradas = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         panelMenu = new javax.swing.JPanel();
         lblMenu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jDesktopPane3 = new javax.swing.JDesktopPane();
         jPanel7 = new javax.swing.JPanel();
@@ -53,9 +90,9 @@ public class View extends javax.swing.JFrame {
         lblChicharrones = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         lblArepitas = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblPrecioE1 = new javax.swing.JLabel();
+        lblPrecioE2 = new javax.swing.JLabel();
+        lblPrecioE3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jDesktopPane4 = new javax.swing.JDesktopPane();
         panelPlato1 = new javax.swing.JPanel();
@@ -64,8 +101,6 @@ public class View extends javax.swing.JFrame {
         lblPlato3 = new javax.swing.JLabel();
         panelPlato2 = new javax.swing.JPanel();
         lblPlato2 = new javax.swing.JLabel();
-        panelPlato4 = new javax.swing.JPanel();
-        lblPlato4 = new javax.swing.JLabel();
         lblPrecio1 = new javax.swing.JLabel();
         lblPrecio2 = new javax.swing.JLabel();
         lblPrecio3 = new javax.swing.JLabel();
@@ -73,6 +108,7 @@ public class View extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jDesktopPane9 = new javax.swing.JDesktopPane();
         boxPfuerte = new javax.swing.JComboBox<>();
+        lblPlate4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jDesktopPane5 = new javax.swing.JDesktopPane();
         jPanel15 = new javax.swing.JPanel();
@@ -101,15 +137,15 @@ public class View extends javax.swing.JFrame {
         lblPostre1 = new javax.swing.JLabel();
         jbls = new javax.swing.JPanel();
         lblPostre3 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblPrecioP1 = new javax.swing.JLabel();
+        lblPrecioP2 = new javax.swing.JLabel();
+        lblPrecioP3 = new javax.swing.JLabel();
+        lblPrecioP4 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         lblPostre4 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jDesktopPane7 = new javax.swing.JDesktopPane();
-        jLabel12 = new javax.swing.JLabel();
+        lblPrecioFInal = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDesktopPane8Layout = new javax.swing.GroupLayout(jDesktopPane8);
@@ -126,8 +162,6 @@ public class View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -141,17 +175,17 @@ public class View extends javax.swing.JFrame {
         jLabel1.setText("ACME");
         jDesktopPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, -1));
 
-        jButton1.setText("Pedir Menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("PEDIR MENU");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jDesktopPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
+        jDesktopPane2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
 
         jPanel1.add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 420));
 
-        jTabbedPane1.addTab("Menu", jPanel1);
+        jTabbedPaneEntradas.addTab("Menu", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -160,6 +194,12 @@ public class View extends javax.swing.JFrame {
         jPanel7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPanel7KeyPressed(evt);
+            }
+        });
+
+        lblSalchipapa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalchipapaMouseClicked(evt);
             }
         });
 
@@ -182,6 +222,12 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        lblChicharrones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblChicharronesMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -201,6 +247,12 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        lblArepitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblArepitasMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -214,97 +266,89 @@ public class View extends javax.swing.JFrame {
 
         jDesktopPane3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 150, 150));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("PRECIO");
-        jDesktopPane3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 100, 20));
+        lblPrecioE1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioE1.setText("PRECIO");
+        jDesktopPane3.add(lblPrecioE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 100, 20));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("PRECIO");
-        jDesktopPane3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        lblPrecioE2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioE2.setText("PRECIO");
+        jDesktopPane3.add(lblPrecioE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("PRECIO");
-        jDesktopPane3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 60, 20));
+        lblPrecioE3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioE3.setText("PRECIO");
+        jDesktopPane3.add(lblPrecioE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 60, 20));
 
         jPanel2.add(jDesktopPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 410));
 
-        jTabbedPane1.addTab("Entradas", jPanel2);
+        jTabbedPaneEntradas.addTab("Entradas", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPlato1.setText("jLabel13");
+        lblPlato1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPlato1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelPlato1Layout = new javax.swing.GroupLayout(panelPlato1);
         panelPlato1.setLayout(panelPlato1Layout);
         panelPlato1Layout.setHorizontalGroup(
             panelPlato1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addComponent(lblPlato1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         panelPlato1Layout.setVerticalGroup(
             panelPlato1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+            .addComponent(lblPlato1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
 
-        jDesktopPane4.add(panelPlato1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, 110));
+        jDesktopPane4.add(panelPlato1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 140));
 
         lblPlato3.setText("jLabel15");
+        lblPlato3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPlato3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelPlato3Layout = new javax.swing.GroupLayout(panelPlato3);
         panelPlato3.setLayout(panelPlato3Layout);
         panelPlato3Layout.setHorizontalGroup(
             panelPlato3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addComponent(lblPlato3, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         panelPlato3Layout.setVerticalGroup(
             panelPlato3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+            .addComponent(lblPlato3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
 
-        jDesktopPane4.add(panelPlato3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 120, 110));
+        jDesktopPane4.add(panelPlato3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 160, 140));
 
         lblPlato2.setText("jLabel14");
+        lblPlato2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPlato2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelPlato2Layout = new javax.swing.GroupLayout(panelPlato2);
         panelPlato2.setLayout(panelPlato2Layout);
         panelPlato2Layout.setHorizontalGroup(
             panelPlato2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+            .addComponent(lblPlato2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         panelPlato2Layout.setVerticalGroup(
             panelPlato2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+            .addComponent(lblPlato2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
 
-        jDesktopPane4.add(panelPlato2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 110, 110));
-
-        lblPlato4.setText("jLabel16");
-
-        javax.swing.GroupLayout panelPlato4Layout = new javax.swing.GroupLayout(panelPlato4);
-        panelPlato4.setLayout(panelPlato4Layout);
-        panelPlato4Layout.setHorizontalGroup(
-            panelPlato4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-        );
-        panelPlato4Layout.setVerticalGroup(
-            panelPlato4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblPlato4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-
-        jDesktopPane4.add(panelPlato4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 110, 100));
-
-        lblPrecio1.setText("PRECIO");
-        jDesktopPane4.add(lblPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 60, 20));
-
-        lblPrecio2.setText("PRECIO");
-        jDesktopPane4.add(lblPrecio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
-
-        lblPrecio3.setText("PRECIO");
-        jDesktopPane4.add(lblPrecio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
-
-        lblPrecio4.setText("PRECIO");
-        jDesktopPane4.add(lblPrecio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
+        jDesktopPane4.add(panelPlato2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 160, 140));
+        jDesktopPane4.add(lblPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 60, 20));
+        jDesktopPane4.add(lblPrecio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 60, 20));
+        jDesktopPane4.add(lblPrecio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 60, 20));
+        jDesktopPane4.add(lblPrecio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 60, 20));
 
         boxPfuerte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "carnivoro", "vegetariano" }));
         boxPfuerte.addItemListener(new java.awt.event.ItemListener() {
@@ -326,10 +370,10 @@ public class View extends javax.swing.JFrame {
         );
         jDesktopPane9Layout.setVerticalGroup(
             jDesktopPane9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane9Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+            .addGroup(jDesktopPane9Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(boxPfuerte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -340,16 +384,22 @@ public class View extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jDesktopPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jDesktopPane9)
         );
 
-        jDesktopPane4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, 70));
+        jDesktopPane4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, 50));
+
+        lblPlate4.setText("jLabel6");
+        lblPlate4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPlate4MouseClicked(evt);
+            }
+        });
+        jDesktopPane4.add(lblPlate4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 150, 130));
 
         jPanel3.add(jDesktopPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 410));
 
-        jTabbedPane1.addTab("PlatoFuerte", jPanel3);
+        jTabbedPaneEntradas.addTab("PlatoFuerte", jPanel3);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -490,15 +540,20 @@ public class View extends javax.swing.JFrame {
 
         jDesktopPane5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 110, 90));
 
-        jPanel4.add(jDesktopPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 410));
+        jPanel4.add(jDesktopPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 420));
 
-        jTabbedPane1.addTab("Bebidas", jPanel4);
+        jTabbedPaneEntradas.addTab("Bebidas", jPanel4);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPostre2.setText("jLabel7");
+        lblPostre2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPostre2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jblLayout = new javax.swing.GroupLayout(jbl);
         jbl.setLayout(jblLayout);
@@ -514,6 +569,11 @@ public class View extends javax.swing.JFrame {
         jDesktopPane6.add(jbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, 130));
 
         lblPostre1.setText("jLabel6");
+        lblPostre1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPostre1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpamLayout = new javax.swing.GroupLayout(jpam);
         jpam.setLayout(jpamLayout);
@@ -529,6 +589,11 @@ public class View extends javax.swing.JFrame {
         jDesktopPane6.add(jpam, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 150, 140));
 
         lblPostre3.setText("jLabel8");
+        lblPostre3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPostre3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jblsLayout = new javax.swing.GroupLayout(jbls);
         jbls.setLayout(jblsLayout);
@@ -543,23 +608,28 @@ public class View extends javax.swing.JFrame {
 
         jDesktopPane6.add(jbls, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 140, 140));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setText("Precio");
-        jDesktopPane6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, 20));
+        lblPrecioP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioP1.setText("Precio");
+        jDesktopPane6.add(lblPrecioP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, 20));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setText("Precio");
-        jDesktopPane6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        lblPrecioP2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioP2.setText("Precio");
+        jDesktopPane6.add(lblPrecioP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setText("Precio");
-        jDesktopPane6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, -1, -1));
+        lblPrecioP3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioP3.setText("Precio");
+        jDesktopPane6.add(lblPrecioP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Precio");
-        jDesktopPane6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
+        lblPrecioP4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioP4.setText("Precio");
+        jDesktopPane6.add(lblPrecioP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
         lblPostre4.setText("jLabel6");
+        lblPostre4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPostre4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -576,15 +646,15 @@ public class View extends javax.swing.JFrame {
 
         jPanel6.add(jDesktopPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 420));
 
-        jTabbedPane1.addTab("Postres", jPanel6);
+        jTabbedPaneEntradas.addTab("Postres", jPanel6);
 
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel12.setText("PRECIO");
-        jDesktopPane7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 114, 41));
+        lblPrecioFInal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPrecioFInal.setText("PRECIO");
+        jDesktopPane7.add(lblPrecioFInal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 114, 41));
 
         jButton4.setText("PAGAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -596,18 +666,15 @@ public class View extends javax.swing.JFrame {
 
         jPanel26.add(jDesktopPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 410));
 
-        jTabbedPane1.addTab("Menu", jPanel26);
+        jTabbedPaneEntradas.addTab("Menu", jPanel26);
 
-        jDesktopPane1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 450));
+        jDesktopPane1.add(jTabbedPaneEntradas);
+        jTabbedPaneEntradas.setBounds(0, 0, 570, 455);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -627,19 +694,178 @@ public class View extends javax.swing.JFrame {
 
     private void boxPfuerteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_boxPfuerteItemStateChanged
         // TODO add your handling code here:
-        
-        if(this.boxPfuerte.getSelectedItem().toString() == "carnivoro"){
-           lblPlato4.setVisible(true);
+
+        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            lblPrecio4.setVisible(true);
+            lblPlate4.setVisible(true);
+            cargarPrecio();
             ngOnitStrongPlate();
         }
-        if(this.boxPfuerte.getSelectedItem().toString() == "vegetariano"){
-        lblPlato4.setVisible(false);
-        setImage(lblPlato1, "src/image/Albondigas.png");
-        setImage(lblPlato2, "src/image/lasañaMaduro.png");
-        setImage(lblPlato3, "src/image/sopaTomate.png");
+        if (this.boxPfuerte.getSelectedItem().toString() == "vegetariano") {
+            lblPrecio4.setVisible(false);
+            lblPlate4.setVisible(false);
+            setImage(lblPlato1, "src/image/Albondigas.png");
+            setImage(lblPlato2, "src/image/lasañaMaduro.png");
+            setImage(lblPlato3, "src/image/sopaTomate.png");
         }
-       
+
     }//GEN-LAST:event_boxPfuerteItemStateChanged
+
+    private void lblPlato1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato1MouseClicked
+        // TODO add your handling code here:
+        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                platoCarni1.colocaItem1();
+                platoCarni1.colocaItem2();
+                platoCarni1.colocaProteina();
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio1.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            }
+        }
+    }//GEN-LAST:event_lblPlato1MouseClicked
+
+    private void lblPlato2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato2MouseClicked
+        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                platoCarni2.colocaItem1();
+                platoCarni2.colocaItem2();
+                platoCarni2.colocaProteina();
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio2.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            }
+        }
+    }//GEN-LAST:event_lblPlato2MouseClicked
+
+    private void lblPlato3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato3MouseClicked
+        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                platoCarni3.colocaItem1();
+                platoCarni3.colocaItem2();
+                platoCarni3.colocaProteina();
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio3.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            }
+        }    }//GEN-LAST:event_lblPlato3MouseClicked
+
+    private void lblPlate4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlate4MouseClicked
+        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                platoCarni4.colocaItem1();
+                platoCarni4.colocaItem2();
+                platoCarni4.colocaProteina();
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio4.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            }
+        }    }//GEN-LAST:event_lblPlate4MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jTabbedPaneEntradas.setSelectedIndex(1);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void lblSalchipapaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalchipapaMouseClicked
+        int index = JOptionPane.showConfirmDialog(this, "deseas pedir esta entrada");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            JOptionPane.showMessageDialog(this, "Agregando Items");
+            jTabbedPaneEntradas.setSelectedIndex(2);
+            this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecioE1.getText());
+
+        }    }//GEN-LAST:event_lblSalchipapaMouseClicked
+
+    private void lblChicharronesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblChicharronesMouseClicked
+        // TODO add your handling code here:
+        int index = JOptionPane.showConfirmDialog(this, "deseas pedir esta entrada");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            JOptionPane.showMessageDialog(this, "Agregando Items");
+            jTabbedPaneEntradas.setSelectedIndex(2);
+            this.PrecioFinal=this.PrecioFinal+formatDouble(lblPrecioE2.getText());
+
+        }
+    }//GEN-LAST:event_lblChicharronesMouseClicked
+
+    private void lblArepitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblArepitasMouseClicked
+        // TODO add your handling code here:
+                int index = JOptionPane.showConfirmDialog(this, "deseas pedir esta entrada");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            JOptionPane.showMessageDialog(this, "Agregando Items");
+            jTabbedPaneEntradas.setSelectedIndex(2);
+            this.PrecioFinal=this.PrecioFinal+formatDouble(lblPrecioE3.getText());
+
+        }
+    }//GEN-LAST:event_lblArepitasMouseClicked
+
+    private void lblPostre1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostre1MouseClicked
+        // TODO add your handling code here:
+        int index = JOptionPane.showConfirmDialog(this, "deseas pedir este postre ");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            builderPostreUno.colocarItem1();
+            builderPostreUno.colocarItem2();
+            builderPostreUno.colocarItem3();
+            this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecioP1.getText());
+            lblPrecioFInal.setText(DoubleFormat(this.PrecioFinal));
+            jTabbedPaneEntradas.setSelectedIndex(5);
+
+        }
+    }//GEN-LAST:event_lblPostre1MouseClicked
+
+    private void lblPostre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostre2MouseClicked
+        // TODO add your handling code here:
+                int index = JOptionPane.showConfirmDialog(this, "deseas pedir este postre ");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            builderPostreDos.colocarItem1();
+            builderPostreDos.colocarItem2();
+            builderPostreDos.colocarItem3();
+            this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecioP2.getText());
+            lblPrecioFInal.setText(DoubleFormat(this.PrecioFinal));
+            jTabbedPaneEntradas.setSelectedIndex(5);
+
+        }
+    }//GEN-LAST:event_lblPostre2MouseClicked
+
+    private void lblPostre3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostre3MouseClicked
+        // TODO add your handling code here:
+        int index = JOptionPane.showConfirmDialog(this, "deseas pedir este postre ");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            builderPostreTres.colocarItem1();
+            builderPostreTres.colocarItem2();
+            this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecioP3.getText());
+            lblPrecioFInal.setText(DoubleFormat(this.PrecioFinal));
+            jTabbedPaneEntradas.setSelectedIndex(5);
+
+        }
+    }//GEN-LAST:event_lblPostre3MouseClicked
+
+    private void lblPostre4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostre4MouseClicked
+        // TODO add your handling code here:
+        int index = JOptionPane.showConfirmDialog(this, "deseas pedir este postre ");
+        if (index == 0) {
+            JOptionPane.showMessageDialog(this, "Plato preparandose");
+            builderPostreCuatro.colocarItem1();
+            builderPostreCuatro.colocarItem2();
+            builderPostreCuatro.colocarItem3();
+            this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecioP4.getText());
+            lblPrecioFInal.setText(DoubleFormat(this.PrecioFinal));
+            jTabbedPaneEntradas.setSelectedIndex(5);
+
+        }
+    }//GEN-LAST:event_lblPostre4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -675,43 +901,65 @@ public class View extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void notVisible(JLabel jlabel,JPanel jpanel){
+
+    private void notVisible(JLabel jlabel, JPanel jpanel) {
         jlabel.setVisible(false);
         jpanel.setVisible(false);
     }
-    public void setImage(JLabel label,String root){
+
+    public void setImage(JLabel label, String root) {
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(
-                image.getImage().getScaledInstance(label.getWidth(), 
-                label.getHeight(),
-                Image.SCALE_DEFAULT
+                image.getImage().getScaledInstance(label.getWidth(),
+                        label.getHeight(),
+                        Image.SCALE_DEFAULT
                 )
         );
         label.setIcon(icon);
         this.repaint();
-        
+
     }
-    
-   private void ngOnitEntries(){
-        setImage(this.lblMenu,"src/image/acmen.png"); 
-        setImage(this.lblSalchipapa,"src/image/salchi.png"); 
-        setImage(this.lblChicharrones,"src/image/chicarr.png"); 
-        setImage(this.lblArepitas,"src/image/arep.png");   
-   }
-   private void ngOnitStrongPlate(){
+
+    private void ngOnitEntries() {
+        setImage(this.lblMenu, "src/image/acmen.png");
+        setImage(this.lblSalchipapa, "src/image/salchi.png");
+        setImage(this.lblChicharrones, "src/image/chicarr.png");
+        setImage(this.lblArepitas, "src/image/arep.png");
+         String valorFormateado1=DoubleFormat(8000.0);
+        lblPrecioE1.setText(valorFormateado1);
+        String valorFormateado2 =DoubleFormat(10000.0);
+        lblPrecioE2.setText(valorFormateado2);
+        String valorFormateado3 = DoubleFormat(11000.0);
+        lblPrecioE3.setText(valorFormateado3);
+    }
+
+    private String DoubleFormat(double num) {
+        DecimalFormat formato = new DecimalFormat("#,###");
+        String valorFormateado = formato.format(num);
+        return valorFormateado;
+    }
+
+    private double formatDouble(String formateado) {
+        String valorSinComas = formateado.replaceAll(",", "");
+        double valorDouble = Double.parseDouble(valorSinComas);
+        return valorDouble;
+    }
+
+    private void ngOnitStrongPlate() {
         setImage(lblPlato1, "src/image/carne.png");
         setImage(lblPlato2, "src/image/pollo.png");
         setImage(lblPlato3, "src/image/pescado.png");
-        setImage(lblPlato4, "src/image/mariscos.png"); 
-   }
-   private void ngOnitPostres(){
+        setImage(lblPlate4, "src/image/mariscos.png");
+    }
+
+    private void ngOnitPostres() {
         setImage(lblPostre1, "src/image/postre1.png");
         setImage(lblPostre2, "src/image/postre2.png");
         setImage(lblPostre3, "src/image/postre3.png");
-        setImage(lblPostre4, "src/image/postre4.png"); 
-   }
-   private void ngOnitDrinks(){
+        setImage(lblPostre4, "src/image/postre4.png");
+    }
+
+    private void ngOnitDrinks() {
         setImage(lblCoca, "src/image/cocaCola.png");
         setImage(lblColom, "src/image/colombiana.png");
         setImage(lblPepsi, "src/image/pepsi.png");
@@ -721,11 +969,29 @@ public class View extends javax.swing.JFrame {
         setImage(lblMaraMora, "src/image/maraMora.png");
         setImage(lblmaraCumango, "src/image/maracumango.png");
         setImage(lblMoraMango, "src/image/moraMango.png");
-}
+    }
+
+    private void cargarPrecio(){
+        //platos principales
+        String valorFormateado1 = DoubleFormat(platoCarni1.precio());
+        lblPrecio1.setText(valorFormateado1);
+        String valorFormateado2 = DoubleFormat(platoCarni2.precio());
+        lblPrecio2.setText(valorFormateado2);
+        String valorFormateado3 =DoubleFormat(platoCarni3.precio());
+        lblPrecio3.setText(valorFormateado3);
+        String valorFormateado4 = DoubleFormat(platoCarni4.precio());
+        lblPrecio4.setText(valorFormateado4);
+        
+        //postres
+        lblPrecioP1.setText(DoubleFormat(builderPostreUno.precio()));
+        lblPrecioP2.setText(DoubleFormat(builderPostreDos.precio()));
+        lblPrecioP3.setText(DoubleFormat(builderPostreTres.precio()));
+        lblPrecioP4.setText(DoubleFormat(builderPostreCuatro.precio()));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxPfuerte;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
@@ -737,14 +1003,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane8;
     private javax.swing.JDesktopPane jDesktopPane9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -764,7 +1022,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPaneEntradas;
     private javax.swing.JPanel jbl;
     private javax.swing.JPanel jbls;
     private javax.swing.JPanel jpam;
@@ -779,10 +1037,10 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblMoraMango;
     private javax.swing.JLabel lblPepsi;
+    private javax.swing.JLabel lblPlate4;
     private javax.swing.JLabel lblPlato1;
     private javax.swing.JLabel lblPlato2;
     private javax.swing.JLabel lblPlato3;
-    private javax.swing.JLabel lblPlato4;
     private javax.swing.JLabel lblPostre1;
     private javax.swing.JLabel lblPostre2;
     private javax.swing.JLabel lblPostre3;
@@ -791,6 +1049,14 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrecio2;
     private javax.swing.JLabel lblPrecio3;
     private javax.swing.JLabel lblPrecio4;
+    private javax.swing.JLabel lblPrecioE1;
+    private javax.swing.JLabel lblPrecioE2;
+    private javax.swing.JLabel lblPrecioE3;
+    private javax.swing.JLabel lblPrecioFInal;
+    private javax.swing.JLabel lblPrecioP1;
+    private javax.swing.JLabel lblPrecioP2;
+    private javax.swing.JLabel lblPrecioP3;
+    private javax.swing.JLabel lblPrecioP4;
     private javax.swing.JLabel lblSalchipapa;
     private javax.swing.JLabel lblmaraCumango;
     private javax.swing.JPanel panelCocaCola;
@@ -798,6 +1064,5 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel panelPlato1;
     private javax.swing.JPanel panelPlato2;
     private javax.swing.JPanel panelPlato3;
-    private javax.swing.JPanel panelPlato4;
     // End of variables declaration//GEN-END:variables
 }

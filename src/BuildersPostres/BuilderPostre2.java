@@ -16,6 +16,10 @@ import Dulces.Oreo;
  * @author USUARIO
  */
 public class BuilderPostre2 implements BuilderPostre{
+
+    public BuilderPostre2() {
+    }
+   
        @Override
     public void colocarItem1() {
         producto.colocarItem1(new Helado());
@@ -29,4 +33,9 @@ public class BuilderPostre2 implements BuilderPostre{
     public void colocarItem3() {
         producto.colocarItem3(new Chispas());
   }
+
+    @Override
+    public double precio() {
+        return 4000;
+    }
 }

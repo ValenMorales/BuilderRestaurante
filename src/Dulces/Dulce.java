@@ -10,5 +10,6 @@ package Dulces;
  */
 public interface Dulce {
     public String caracteristicas();
+    
    
 }

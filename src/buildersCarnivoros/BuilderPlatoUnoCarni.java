@@ -8,22 +8,28 @@ import Builders.BuilderCarnivoro;
 import Guarniciones.Ensalada;
 import Guarniciones.Papa;
 import ProteinasCarni.CarnePlancha;
+import view.View;
 
 /**
  *
  * @author USUARIO
  */
 public class BuilderPlatoUnoCarni implements BuilderCarnivoro {
-
+    
+    public BuilderPlatoUnoCarni() {
+       
+    }
 
     @Override
     public void colocaItem1() {
-        producto.colocarItem1(new Papa());
+        Papa papa= new Papa();
+        producto.colocarItem1(papa);
     }
 
     @Override
     public void colocaItem2() {
-          producto.colocarItem2(new Ensalada());
+        Ensalada ensalada = new Ensalada();
+          producto.colocarItem2(ensalada);
  }
 
     @Override

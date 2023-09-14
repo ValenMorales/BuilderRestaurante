@@ -13,4 +13,9 @@ public class Helado implements Dulce{
     public String caracteristicas() {
         return "Helado de vainilla";
    }
+
+    public Helado() {
+    }
+   
+
 }

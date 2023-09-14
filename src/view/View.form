@@ -50,13 +50,13 @@
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="false"/>
+        <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+        <Container class="javax.swing.JTabbedPane" name="jTabbedPaneEntradas">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="570" height="450"/>
+              <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
 
@@ -119,16 +119,16 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton1">
+                    <Component class="javax.swing.JButton" name="jButton2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Pedir Menu"/>
+                        <Property name="text" type="java.lang.String" value="PEDIR MENU"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="230" y="380" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="250" y="380" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -184,6 +184,9 @@
                       </Layout>
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="lblSalchipapa">
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSalchipapaMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -211,6 +214,9 @@
                       </Layout>
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="lblChicharrones">
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblChicharronesMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -238,10 +244,13 @@
                       </Layout>
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="lblArepitas">
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblArepitasMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel2">
+                    <Component class="javax.swing.JLabel" name="lblPrecioE1">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -254,7 +263,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel3">
+                    <Component class="javax.swing.JLabel" name="lblPrecioE2">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -267,7 +276,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel4">
+                    <Component class="javax.swing.JLabel" name="lblPrecioE3">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -311,19 +320,19 @@
                     <Container class="javax.swing.JPanel" name="panelPlato1">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="40" y="150" width="120" height="110"/>
+                          <AbsoluteConstraints x="20" y="100" width="160" height="140"/>
                         </Constraint>
                       </Constraints>
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato1" alignment="1" pref="120" max="32767" attributes="0"/>
+                              <Component id="lblPlato1" alignment="0" pref="160" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato1" alignment="1" pref="110" max="32767" attributes="0"/>
+                              <Component id="lblPlato1" alignment="0" pref="140" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -332,25 +341,28 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel13"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPlato1MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="panelPlato3">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="390" y="150" width="120" height="110"/>
+                          <AbsoluteConstraints x="400" y="110" width="160" height="140"/>
                         </Constraint>
                       </Constraints>
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato3" alignment="1" pref="120" max="32767" attributes="0"/>
+                              <Component id="lblPlato3" alignment="0" pref="160" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato3" alignment="1" pref="110" max="32767" attributes="0"/>
+                              <Component id="lblPlato3" alignment="0" pref="140" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -359,25 +371,28 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel15"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPlato3MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="panelPlato2">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="150" width="110" height="110"/>
+                          <AbsoluteConstraints x="210" y="100" width="160" height="140"/>
                         </Constraint>
                       </Constraints>
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato2" alignment="1" pref="110" max="32767" attributes="0"/>
+                              <Component id="lblPlato2" alignment="0" pref="160" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato2" alignment="1" pref="110" max="32767" attributes="0"/>
+                              <Component id="lblPlato2" alignment="0" pref="140" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -386,80 +401,44 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel14"/>
                           </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JPanel" name="panelPlato4">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="290" width="110" height="100"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato4" alignment="1" pref="110" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPlato4" alignment="1" pref="100" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="javax.swing.JLabel" name="lblPlato4">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="jLabel16"/>
-                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPlato2MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Component class="javax.swing.JLabel" name="lblPrecio1">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="PRECIO"/>
-                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="70" y="120" width="60" height="20"/>
+                          <AbsoluteConstraints x="90" y="70" width="60" height="20"/>
                         </Constraint>
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPrecio2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="PRECIO"/>
-                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="250" y="120" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="250" y="70" width="60" height="20"/>
                         </Constraint>
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPrecio3">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="PRECIO"/>
-                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="430" y="120" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="460" y="80" width="60" height="20"/>
                         </Constraint>
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPrecio4">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="PRECIO"/>
-                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="260" y="270" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="360" y="370" width="60" height="20"/>
                         </Constraint>
                       </Constraints>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel5">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="20" width="-1" height="70"/>
+                          <AbsoluteConstraints x="220" y="20" width="-1" height="50"/>
                         </Constraint>
                       </Constraints>
 
@@ -471,10 +450,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jDesktopPane9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jDesktopPane9" alignment="0" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
@@ -493,10 +469,10 @@
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="boxPfuerte" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <EmptySpace pref="22" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -522,6 +498,19 @@
                         </Container>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JLabel" name="lblPlate4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPlate4MouseClicked"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="200" y="260" width="150" height="130"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -542,7 +531,7 @@
                 <Container class="javax.swing.JDesktopPane" name="jDesktopPane5">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="0" width="570" height="410"/>
+                      <AbsoluteConstraints x="0" y="0" width="570" height="420"/>
                     </Constraint>
                   </Constraints>
 
@@ -845,6 +834,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel7"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPostre2MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -872,6 +864,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPostre1MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -899,10 +894,13 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel8"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPostre3MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel9">
+                    <Component class="javax.swing.JLabel" name="lblPrecioP1">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -915,7 +913,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel10">
+                    <Component class="javax.swing.JLabel" name="lblPrecioP2">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -928,7 +926,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel11">
+                    <Component class="javax.swing.JLabel" name="lblPrecioP3">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -941,7 +939,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel5">
+                    <Component class="javax.swing.JLabel" name="lblPrecioP4">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
@@ -978,6 +976,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="jLabel6"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPostre4MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1009,7 +1010,7 @@
                     <Property name="useNullLayout" type="boolean" value="false"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel12">
+                    <Component class="javax.swing.JLabel" name="lblPrecioFInal">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>

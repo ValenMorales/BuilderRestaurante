@@ -11,6 +11,11 @@ import PlatoPrincipal.Guarnicion;
  * @author USUARIO
  */
 public class Papa implements Guarnicion{
+
+    public Papa() {
+    }
+    
+    @Override
     public String caracteristicas (){
         return "Papa cocinada";
     }

@@ -13,4 +13,8 @@ public class Galleta implements Dulce{
     public String caracteristicas() {
         return "Galleta de avena";
    }
+
+    public Galleta() {
+    }
+    
 }
