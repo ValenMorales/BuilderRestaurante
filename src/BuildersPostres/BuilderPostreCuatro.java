@@ -5,10 +5,8 @@
 package BuildersPostres;
 
 import Builders.BuilderPostre;
-import Dulces.Brownie;
-import Dulces.Galleta;
-import Dulces.Oreo;
 
+import Dulces.*;
 /**
  *
  * @author USUARIO
@@ -20,18 +18,22 @@ public class BuilderPostreCuatro implements BuilderPostre {
 
     @Override
     public void colocarItem1() {
+
         producto.colocarItem1(new Brownie());
-    }
+  }
 
     @Override
     public void colocarItem2() {
-        producto.colocarItem1(new Galleta());
-    }
+        producto.colocarItem2(new Galleta());
+     }
 
     @Override
     public void colocarItem3() {
-        producto.colocarItem1(new Oreo());
+  
+    producto.colocarItem3(new Oreo());
+
     }
+
 
     @Override
     public double precio() {

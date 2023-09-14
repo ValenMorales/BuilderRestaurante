@@ -32,4 +32,10 @@ public class Restaurante {
          construir.colocaProteina();
          
      }
+     
+     public void EnsamblarPostre (BuilderPostre construir){
+         construir.colocarItem1();
+         construir.colocarItem2();
+         construir.colocarItem3();
+     }
 }
