@@ -4,18 +4,12 @@
  */
 package Builders;
 
-import Productos.ProductoPostre;
-
 /**
  *
- * @author Valentina
- * 
- * 
+ * @author Sergi
  */
-public interface BuilderPostre {
-    ProductoPostre producto=new ProductoPostre();
-    public void colocarItem1();
-    public void colocarItem2();
-    public void colocarItem3();
+public interface BuilderBebida {
     public double precio();
+    public String caracteristica();
+    
 }
