@@ -8,6 +8,11 @@ package Frutas;
  *
  * @author USUARIO
  */
-public class Mora {
+public class Mora implements Fruta {
+
+    @Override
+    public String caracteristicas() {
+      return "Mora";
+    }
     
 }

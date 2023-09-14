@@ -39,7 +39,7 @@ public class ProductoPostre {
     }
     public void colocarItem3 (Dulce dulce3){
         this.dulce3 = dulce3;
-        JOptionPane.showMessageDialog(view,"se coloco la proteina en el producto "+this.dulce3.caracteristicas());
+        JOptionPane.showMessageDialog(view,"se coloco el item3 en el producto "+this.dulce3.caracteristicas());
     }
     
 }
