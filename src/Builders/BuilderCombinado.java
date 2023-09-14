@@ -5,15 +5,14 @@
 package Builders;
 
 import Productos.ProductoCombinado;
-import Productos.ProductoJugo;
 
 /**
  *
  * @author USUARIO
  */
-public interface BuilderJugo {
-      ProductoJugo producto=new ProductoJugo();
-    public void colocarFruta();
-    public double precio();
-   
+public interface BuilderCombinado {
+     ProductoCombinado producto=new ProductoCombinado();
+    public void colocarFruta1();
+    public void colocarFruta2();
+    
 }
