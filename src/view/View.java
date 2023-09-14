@@ -735,7 +735,7 @@ public class View extends javax.swing.JFrame {
         jTabbedPaneEntradas.addTab("Menu", jPanel26);
 
         jDesktopPane1.add(jTabbedPaneEntradas);
-        jTabbedPaneEntradas.setBounds(0, 0, 570, 455);
+        jTabbedPaneEntradas.setBounds(0, 0, 570, 451);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 450));
 
@@ -787,13 +787,14 @@ public class View extends javax.swing.JFrame {
                 this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio1.getText());
                 jTabbedPaneEntradas.setSelectedIndex(3);
 
-            }else{
+            }
+        }else{
                 JOptionPane.showMessageDialog(this, "Plato preparandose");
                ensamblarBuilderVegetariano(this.builderPlatoUnoVege);
                 this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio1.getText());
                 jTabbedPaneEntradas.setSelectedIndex(3);
             }
-        }
+        
     }//GEN-LAST:event_lblPlato1MouseClicked
 
     private void lblPlato2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato2MouseClicked
@@ -806,34 +807,14 @@ public class View extends javax.swing.JFrame {
                 jTabbedPaneEntradas.setSelectedIndex(3);
 
             }
+        } else {
+              JOptionPane.showMessageDialog(this, "Plato preparandose");
+               ensamblarBuilderVegetariano(this.builderPlatoDosVege);
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio2.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+            
         }
     }//GEN-LAST:event_lblPlato2MouseClicked
-
-    private void lblPlato3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato3MouseClicked
-        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
-            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
-            if (index == 0) {
-                JOptionPane.showMessageDialog(this, "Plato preparandose");
-                platoCarni3.colocaItem1();
-                platoCarni3.colocaItem2();
-                platoCarni3.colocaProteina();
-                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio3.getText());
-                jTabbedPaneEntradas.setSelectedIndex(3);
-
-            }
-        }    }//GEN-LAST:event_lblPlato3MouseClicked
-
-    private void lblPlate4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlate4MouseClicked
-        if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
-            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
-            if (index == 0) {
-                JOptionPane.showMessageDialog(this, "Plato preparandose");
-                ensamblarBuilderCarnivoro(platoCarni4);
-                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio4.getText());
-                jTabbedPaneEntradas.setSelectedIndex(3);
-
-            }
-        }    }//GEN-LAST:event_lblPlate4MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTabbedPaneEntradas.setSelectedIndex(1);
@@ -971,6 +952,36 @@ public class View extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_lblPepsiMouseClicked
+
+    private void lblPlato3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato3MouseClicked
+     if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                ensamblarBuilderCarnivoro(platoCarni4);
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio3.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            } 
+     }else {   JOptionPane.showMessageDialog(this, "Plato preparandose");
+               ensamblarBuilderVegetariano(this.builderPlatoTresVege);
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio3.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+     }
+    }//GEN-LAST:event_lblPlato3MouseClicked
+
+    private void lblPlate4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlate4MouseClicked
+      if (this.boxPfuerte.getSelectedItem().toString() == "carnivoro") {
+            int index = JOptionPane.showConfirmDialog(this, "deseas pedir este plato");
+            if (index == 0) {
+                JOptionPane.showMessageDialog(this, "Plato preparandose");
+                ensamblarBuilderCarnivoro(platoCarni4);
+                this.PrecioFinal = this.PrecioFinal + formatDouble(lblPrecio4.getText());
+                jTabbedPaneEntradas.setSelectedIndex(3);
+
+            } 
+      }
+    }//GEN-LAST:event_lblPlate4MouseClicked
 
     /**
      * @param args the command line arguments
