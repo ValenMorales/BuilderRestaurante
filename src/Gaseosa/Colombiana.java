@@ -4,21 +4,21 @@
  */
 package Gaseosa;
 
-import Builders.BuilderGaseosa;
+import Builders.BuilderBebida;
 
 /**
  *
  * @author Sergi
  */
-public class Colombiana implements BuilderGaseosa {
+public class Colombiana implements BuilderBebida{
 
     @Override
     public double precio() {
-        return 3000.0;
+        return 3200.0;
     }
 
     @Override
-    public String Gaseosa() {
+    public String caracteristica() {
         return "colombiana";
     }
     

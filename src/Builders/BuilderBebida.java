@@ -10,6 +10,6 @@ package Builders;
  */
 public interface BuilderBebida {
     public double precio();
-    public String Gaseosa();
+    public String caracteristica();
     
 }

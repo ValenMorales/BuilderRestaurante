@@ -4,13 +4,15 @@
  */
 package Gaseosa;
 
+import Builders.BuilderBebida;
+
 
 
 /**
  *
  * @author Sergi
  */
-public class CocaCola implements Bebida{
+public class CocaCola implements BuilderBebida{
 
     @Override
     public double precio() {
@@ -19,7 +21,7 @@ public class CocaCola implements Bebida{
     }
 
     @Override
-    public String Gaseosa() {
+    public String caracteristica() {
         return "Coca cola";
     }
     
