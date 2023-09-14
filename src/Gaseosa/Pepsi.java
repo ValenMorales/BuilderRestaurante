@@ -2,20 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Guarniciones;
+package Gaseosa;
 
-import PlatoPrincipal.Guarnicion;
+import Builders.BuilderGaseosa;
 
 /**
  *
- * @author USUARIO
+ * @author Sergi
  */
-public class Papa implements Guarnicion{
+public class Pepsi implements BuilderGaseosa{
 
-    public Papa() {
-    }
     @Override
-    public String caracteristicas (){
-        return "Papa cocinada";
+    public double precio() {
+        return 4000.0;
     }
+
+    @Override
+    public String Gaseosa() {
+        return "Pepsi";
+    }
+    
 }
