@@ -5,6 +5,9 @@
 package view;
 
 import Builders.BuilderCarnivoro;
+import Builders.BuilderCombinado;
+import Builders.BuilderJugo;
+import Builders.BuilderPostre;
 import Builders.BuilderVegetariano;
 import BuildersPostres.*;
 import Gaseosa.*;
@@ -520,6 +523,11 @@ public class View extends javax.swing.JFrame {
         jDesktopPane5.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 110, 110));
 
         lblMango.setText("jLabel8");
+        lblMango.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMangoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -983,6 +991,10 @@ public class View extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_lblPlate4MouseClicked
 
+    private void lblMangoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMangoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMangoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1029,6 +1041,18 @@ public class View extends javax.swing.JFrame {
         buildervegetariano.colocaItem2();
         buildervegetariano.colocaProteina();
     }
+     private void ensamblarBuilderPostre(BuilderPostre builderpostre){
+        builderpostre.colocarItem1();
+        builderpostre.colocarItem2();
+        builderpostre.colocarItem3();
+    }
+     private void ensamblarBuilderJugo(BuilderJugo builderJugo){
+         builderJugo.colocarFruta();
+     }
+     private void ensamblarBuilderCombinado(BuilderCombinado builderCombinado){
+     builderCombinado.colocarFruta1();
+     builderCombinado.colocarFruta2();
+     }
     
 
     private void notVisible(JLabel jlabel, JPanel jpanel) {
