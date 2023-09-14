@@ -11,6 +11,11 @@ import PlatoPrincipal.Guarnicion;
  * @author USUARIO
  */
 public class Ensalada implements Guarnicion {
+
+    public Ensalada() {
+    }
+    
+    @Override
     public String caracteristicas (){
         return "ensalada dulce";
     }

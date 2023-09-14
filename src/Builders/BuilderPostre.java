@@ -15,4 +15,5 @@ public interface BuilderPostre {
     public void colocarItem1();
     public void colocarItem2();
     public void colocarItem3();
+    public double precio();
 }

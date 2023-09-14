@@ -14,8 +14,9 @@ import ProteinasCarni.*;
  * @author USUARIO
  */
 public class BuilderPlatoCuatroCarni implements BuilderCarnivoro {
-    
-     
+
+    public BuilderPlatoCuatroCarni() {
+    } 
     @Override
     public void colocaItem1() {
         producto.colocarItem1(new Ensalada());
