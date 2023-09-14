@@ -4,10 +4,16 @@
  */
 package Builders;
 
+import Productos.ProductoCombinado;
+import Productos.ProductoJugo;
+
 /**
  *
  * @author USUARIO
  */
 public interface BuilderJugo {
-    
+      ProductoJugo producto=new ProductoJugo();
+    public void colocarFruta();
+    public double precio();
+   
 }
