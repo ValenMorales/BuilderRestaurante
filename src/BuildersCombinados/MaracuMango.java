@@ -21,4 +21,5 @@ public class MaracuMango implements BuilderCombinado{
     public void colocarFruta2() {
        producto.colocarfruta2(new Mango()); }
     
-}
+}      
+

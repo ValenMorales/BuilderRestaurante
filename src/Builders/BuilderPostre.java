@@ -8,7 +8,9 @@ import Productos.ProductoPostre;
 
 /**
  *
- * @author USUARIO
+ * @author Valentina
+ * 
+ * 
  */
 public interface BuilderPostre {
     ProductoPostre producto=new ProductoPostre();
