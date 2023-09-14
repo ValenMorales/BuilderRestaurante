@@ -13,4 +13,8 @@ public class Oreo implements Dulce {
     public String caracteristicas() {
         return "Galletas oreo trituradas";
    }
+
+    public Oreo() {
+    }
+    
 }

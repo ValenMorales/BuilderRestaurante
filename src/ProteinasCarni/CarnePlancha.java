@@ -10,6 +10,9 @@ import PlatoPrincipal.ProteinaCarnivora;
  * @author USUARIO
  */
 public class CarnePlancha implements ProteinaCarnivora{
+
+    public CarnePlancha() {
+    }
     @Override
     public String caracteristicas (){
         return "carne asada a la plancha";

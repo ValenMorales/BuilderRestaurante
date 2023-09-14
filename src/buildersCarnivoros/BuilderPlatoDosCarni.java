@@ -14,6 +14,9 @@ import ProteinasCarni.*;
  * @author USUARIO
  */
 public class BuilderPlatoDosCarni implements BuilderCarnivoro{
+
+    public BuilderPlatoDosCarni() {
+    }
     
     @Override
     public void colocaItem1() {

@@ -14,5 +14,9 @@ public class Chispas implements Dulce {
     public String caracteristicas() {
         return "chispitas de chocolate";
    }
+
+    public Chispas() {
+    }
+    
     
 }

@@ -13,4 +13,8 @@ public class Brownie implements Dulce{
     public String caracteristicas() {
         return "Brownie de chocolate";
    }
+
+    public Brownie() {
+    }
+    
 }
